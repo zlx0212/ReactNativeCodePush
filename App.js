@@ -7,7 +7,8 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import {Platform, StyleSheet, Text, View, Modal} from 'react-native';
+import EditModal from './EditModal';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -25,11 +26,20 @@ export default class App extends Component<Props> {
                     Hello code push!!
                 </Text>
                 <Text style={styles.instructions}>
-                    祝你的人生灿烂如画
+                    🌹祝你的人生灿烂如花🌹
                 </Text>
                 <Text style={styles.instructions}>
                     {instructions}
                 </Text>
+
+                <Modal
+                    transparent={true}
+                    visible={true}
+                    onRequestClose={() => {
+                    }}
+                >
+                    <EditModal type={2} title="整单备注" textRemark={'我就是测试啊'} next={()=>{console.log('---->>>confirm action')}} closeAction={()=>{console.log('---->>>>colseAction')}}></EditModal>
+                </Modal>
             </View>
         );
     }

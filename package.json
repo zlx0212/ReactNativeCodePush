@@ -4,9 +4,11 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
+    "test": "jest",
+    "bundle-ios": "node node_modules/react-native/local-cli/cli.js bundle --entry-file index.js --platform ios --dev false --bundle-output ./ios/bundle/ReactNativeCodePush.jsbundle --assets-dest ./ios/bundle"
   },
   "dependencies": {
+    "diff-match-patch": "^1.0.4",
     "react": "16.6.0-alpha.8af6728",
     "react-native": "0.57.4",
     "react-native-code-push": "^5.4.2"
